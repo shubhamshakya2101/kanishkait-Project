@@ -1,0 +1,238 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            font-size: 30px;
+        }
+        .container li{
+            list-style: none;
+        }
+        .container ul{
+            font-size: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p>Quiz Start</p>
+        </div>
+    </header>
+    <div class="container">
+     <h1>question <%=qq%> of 5</h1>
+     <p><%=all%></p>
+     <form action="/cho" method="POST">
+    <ul>
+        <li>
+            <input type="radio" name="choice" value="1"> <%=cho1%>
+        </li>
+        <li>
+            <input type="radio" name="choice" value="2"><%=cho2%>
+        </li>
+        <li>
+            <input type="radio" name="choice" value="3"><%=cho3%>
+        </li>
+        <li>
+            <input type="radio" name="choice" value="4"><%=cho4%>
+        </li>
+    
+    </ul>
+    <input type="submit" value="Next" style="background-color: green; font-size: 30px;font-weight: 1000;">
+    </form>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT Quiz</title>
+    <link rel="icon"  href="images/fav.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: #333
+}
+
+.container {
+    background-color: #555;
+    color: #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 700px
+}
+
+.container>p {
+    font-size: 32px
+}
+
+.question {
+    width: 75%
+}
+
+.options {
+    position: relative;
+    padding-left: 40px
+}
+
+#options label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.options input {
+    opacity: 0
+}
+
+.checkmark {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #555;
+    border: 1px solid #ddd;
+    border-radius: 50%
+}
+
+.options input:checked~.checkmark:after {
+    display: block
+}
+
+.options .checkmark:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out 0s
+}
+
+.options input[type="radio"]:checked~.checkmark {
+    background: #21bf73;
+    transition: 300ms ease-in-out 0s
+}
+
+.options input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1)
+}
+
+.btn-primary {
+    background-color: #555;
+    color: #ddd;
+    border: 1px solid #ddd
+}
+
+.btn-primary:hover {
+    background-color: #21bf73;
+    border: 1px solid #21bf73
+}
+
+.btn-success {
+    padding: 5px 25px;
+    background-color: #21bf73
+}
+
+@media(max-width:576px) {
+    .question {
+        width: 100%;
+        word-spacing: 2px
+    }
+}
+    </style>
+    <script>
+ function opp() {  
+            
+            if(!(document.getElementById('1').checked)&&!(document.getElementById('2').checked)&&!(document.getElementById('3').checked)&&!(document.getElementById('4').checked) ) { 
+               // alert("please section the option");
+                
+
+            } 
+        } 
+        var timer=0
+        function countdown(){
+            if(timer===20)
+            {
+                clearInterval();
+               document.getElementById("dem").innerHTML="Your Time is Ended Now";
+               document.getElementById("dem").style.color="red";
+            //    window.location.assign("/cho");
+               document.getElementById("rr").click();
+            }
+            else{
+                timer++;
+                time.innerText=timer;
+                if(timer==1){
+                    document.getElementById("dem").innerHTML="Your Time is Start Now";
+                    document.getElementById("dem").style.color="white";
+                }
+                if(timer===15){
+                    document.getElementById("dem").innerHTML="Please Select the Answer Your Time is Going";
+                    document.getElementById("dem").style.color="orange";
+                }
+            }
+        }
+        setInterval(countdown,1000);
+          
+    </script>
+</head>
+<body style= "background: linear-gradient(57deg, #00C6A7 , #1E4D92 );background-repeat: no-repeat; height:100vh">
+    <div class="container mt-sm-5 my-1">
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+            <h6 style="text-align: center; color: red; font-weight: 1000;" id="dem"></h6>
+            <h1 style="font-size:20px;text-align:center;font-weight: 1000; ">Question 1 Of 5</h1>
+            
+            <h6 style="margin-left: 370px;margin-top: -30px; text-align: center; font-weight: 1000; color:white; background-color: orange;">Timer</h6>
+            <h5  id="time" style="margin-left: 455px;margin-top: -30px; color:red;font-weight: 1000;">00</h5>
+           
+            <div class="py-2 h5"><b style="font-weight: 1000; text-transform: capitalize;margin-left: 70px; font-size: 25px;text-transform: capitalize;">Q. <%=all%> </b></div>
+            <form action="/choj" method="POST">
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                 <label class="options" style="font-weight: 1000; font-size: 20px;text-transform: capitalize;"> <%=cho1%>
+                  <input type="radio" name="choice" value="1" id="1"> <span class="checkmark"></span> </label> 
+                 <label class="options" style="font-weight: 1000; font-size: 20px;text-transform: capitalize;"><%=cho2%>
+                     <input type="radio" name="choice" value="2" id="2"> <span class="checkmark"></span> </label> 
+                     <label class="options" style="font-weight: 1000; font-size: 20px;text-transform: capitalize;"><%=cho3%>
+                         <input type="radio" name="choice" value="3" id="3"> <span class="checkmark"></span> </label> 
+                         <label class="options"style="font-weight: 1000; font-size: 20px;text-transform: capitalize;"><%=cho4%>
+                              <input type="radio" name="choice" value="4" id="4"> <span class="checkmark"></span> </label>
+                             </div>
+        </div>
+        <div class="d-flex align-items-center pt-3">
+            
+            <div class="ml-auto mr-sm-5"> <input type="submit" onclick="opp()" class="btn btn-success" value="Next" id="rr"> </div>
+        </div>
+        </form>
+        
+    </div>
+</body>
+</html>

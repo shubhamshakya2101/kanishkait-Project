@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="icon"  href="images/fav.png">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=RocknRoll+One&display=swap" rel="stylesheet">
+    
+</head>
+<body style="background: linear-gradient(57deg, #00C6A7 , #1E4D92 );background-repeat: no-repeat; height:100vh">
+    <h1 style="color:orange;font-size: 60px; font-weight:bold; text-align: center; text-transform: capitalize;padding: 40px;font-family:Montserrat;">hello <%=email%> here we can take the quiz</h1>
+    <h4  style="color:white;font-size: 30px; font-weight: 500; text-align: center; text-transform: capitalize; padding:30px;font-family:Montserrat;">if you want to take the quiz and we can get the cartificate if your all answer are correct i will give you the valuable cartificate which we will use many place and take the advantage </br>thank you</h4>
+    <h5 style="text-align: center; color:orange;font-weight: 1000;font-size: 30px;font-family:Montserrat; margin-left: -20px;">Please Choose the Catagery</h5>
+    <form action="/takequiz" method="POST">
+        <select name="courses" style="margin-left: 650px;display:flex; margin-bottom: 120px;font-size: 25px; color:black;font-family:Montserrat;">
+          <option value="2">JAVASCRIPT</option>
+          <option value="1">HTML</option>
+          
+          <option value="3">CSS</option>
+          <option value="4">BOOTSTRAP</option>
+        </select>
+        <input type="submit" value="Take Quiz" style="background-color:#aa2ee6; margin-left:665px; text-decoration: none; font-size: 25px;padding:5px;color:white;font-family:Montserrat; border-radius: 20px;">
+
+       
+      </form>
+      
+   </body>
+</html>

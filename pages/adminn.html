@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  href="images/fav.png">
+   
+    <title>Add Questions</title>
+    <style>
+        .container{
+            text-align: center;
+            font-size: 30px;
+        }
+        p input{
+            width:400px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(57deg, #00C6A7 , #1E4D92 );background-repeat: no-repeat; height:100vh">
+
+    <header>
+        <div class="container">
+            <p> Quiz</p>
+            
+        </div>
+    </header>
+    <div class="container">
+        <h1>Add Questions</h1>
+        <form action="/adm" method="POST" validate="">
+             <p>
+                 <label>Question Number:</label>
+                 <input type="number" name="question_number" value="" style="width:100px" required>
+             </p>
+             <p>
+                <label>Question Text:</label>
+                <input type="text" name="question_text" value=""  required>
+            </p>
+           
+             <p>
+                <label>Choice1:</label>
+                <input type="text" name="Choice1" value=""  required>
+            </p>
+            <p>
+                <label>Choice2:</label>
+                <input type="text" name="Choice2" value=""  required>
+            </p>
+            <p>
+                <label>Choice3:</label>
+                <input type="text" name="Choice3" value=""  required>
+            </p>
+            <p>
+                <label>Choice4:</label>
+                <input type="text" name="Choice4" value=""  required>
+            </p>
+            
+            <p>
+                <label>correct option number</label>
+                <input type="number" name="correct_choice" value="" style="width:100px"  required>
+            </p>
+            <input type="submit" value="Add Question" style="font-size: 20px; background-color: green;">
+
+        </form>
+    </div>
+</body>
+</html>

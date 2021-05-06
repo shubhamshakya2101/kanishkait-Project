@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <link rel="icon"  href="images/fav.png">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=RocknRoll+One&display=swap" rel="stylesheet">
+  
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+    margin: 30px 0px;
+    /* background: linear-gradient(to right, #b92b27, #1565c0); */
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 )
+}
+.progress {
+    position: relative;
+	height: 25px;
+}
+.progress > .progress-type {
+	position: absolute;
+	left: 0px;
+	font-weight: 800;
+	padding: 3px 30px 2px 10px;
+	color: rgb(255, 255, 255);
+	background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+	position: absolute;
+	right: 0px;
+	font-weight: 800;
+	padding: 3px 10px 2px;
+}
+    </style>
+</head>
+<body>
+   
+<div class="container">
+	<div class="row">  
+        <h2 style="text-align: center; font-size:40px; text-transform:capitalize; color:white;font-family: Montserrat;">hey <%=email%> Your Progress Is Littel Bit Improve </h2>                 
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+            </div>
+            <span class="progress-type">Apptitute</span>
+            <span class="progress-completed">60%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                <span class="sr-only">40% Complete (success)</span>
+            </div>
+            <span class="progress-type">Reasoning</span>
+            <span class="progress-completed">40%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                <span class="sr-only">20% Complete (info)</span>
+            </div>
+            <span class="progress-type">Verbal Reasoning</span>
+            <span class="progress-completed">20%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                <span class="sr-only">60% Complete (warning)</span>
+            </div>
+            <span class="progress-type">Verbal Ability</span>
+            <span class="progress-completed">60%</span>
+        </div>
+       </div>
+</div>
+</body>
+</html>
